@@ -72,7 +72,7 @@ namespace Onbooks_3Ds.Controllers
         {
 
 
-            User c = new(email, senha,"Normal");
+            User c = new(email,senha,"Normal");
             string resultado = c.VarificarLogin();
             if (resultado == "Aprovado")
             {

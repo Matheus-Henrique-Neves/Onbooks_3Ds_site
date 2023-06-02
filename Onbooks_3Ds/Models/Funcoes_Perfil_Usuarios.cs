@@ -24,7 +24,7 @@ namespace Onbooks_3Ds.Models
             this.senha = senha;
         }
         /*Os metodos emcapsulados e a string de conexão para o server mudar o que esta abaixo caso for mexer em caso*/
-        static MySqlConnection conexao = FabricaConexao.getConexao(true, "Casa");
+        static MySqlConnection conexao = FabricaConexao.getConexao(true, "Senai");
         public string Nome_usuario { get => nome_usuario; set => nome_usuario = value; }
         public string Cpf { get => cpf; set => cpf = value; }
         public string Email { get => email; set => email = value; }
@@ -47,7 +47,7 @@ namespace Onbooks_3Ds.Models
                 try
                 {
                 conexao.Open();
-                MySqlCommand qyr = new MySqlCommand("INSERT INTO usuario VALUES(@nome_usuario,@cpf,@email,@telefone,@senha,null)", conexao);
+                MySqlCommand qyr = new MySqlCommand("INSERT INTO usuario VALUES(@nome_usuario,@cpf,@email,@telefone,@senha,null,null,null,null,null,null,null,null)", conexao);
                 qyr.Parameters.AddWithValue("@nome_usuario",this.nome_usuario);
                 qyr.Parameters.AddWithValue("@cpf", cpfCripitografado);
                 qyr.Parameters.AddWithValue("@email", this.email);

@@ -29,7 +29,7 @@ namespace Onbooks_3Ds.Models
         public string Identidade { get => identidade; set => identidade = value; }
         public DateTime Data_reserva { get => data_reserva; set => data_reserva = value; }
         public DateTime Data_finalizacao_reserva { get => data_finalizacao_reserva; set => data_finalizacao_reserva = value; }
-        static MySqlConnection conexao = FabricaConexao.getConexao(true, "Casa");
+        static MySqlConnection conexao = FabricaConexao.getConexao(true, "Senai");
 
 
         internal static List<Reserva> listar()

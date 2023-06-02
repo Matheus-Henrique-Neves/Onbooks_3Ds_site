@@ -31,7 +31,7 @@ namespace Onbooks_3Ds.Models
         public string Identidade { get => identidade; set => identidade = value; }
         public DateTime Data_emprestimo { get => data_emprestimo; set => data_emprestimo = value; }
         public DateTime Data_devolucao { get => data_devolucao; set => data_devolucao = value; }
-        static MySqlConnection conexao = FabricaConexao.getConexao(true, "Casa");
+        static MySqlConnection conexao = FabricaConexao.getConexao(true, "Senai");
 
         internal static List<Emprestimo> GetEmprestimo()
         {

@@ -80,7 +80,7 @@ namespace Onbooks_3Ds.Controllers
 
 
         [HttpPost]
-        public IActionResult Cadastro_de_livros(string Titulo,string isbn,string issn,string data,string editora, object resultado)
+        public IActionResult Cadastro_de_livros(string titulo,string isbn,string issn,string ano_publicacao, string editora)
         {
             
             foreach(IFormFile arq in Request.Form.Files)
@@ -89,13 +89,17 @@ namespace Onbooks_3Ds.Controllers
                 arq.CopyTo(s);
                 byte[] bytesArquivo= s.ToArray();
                 string img = Convert.ToBase64String(bytesArquivo);
-                Cadastrar_Acervo cadastrar_Acervo = new Cadastrar_Acervo(Titulo,img,data,issn,isbn,editora);
-                resultado = cadastrar_Acervo.cadastrar_livro();
+                Cadastrar_Acervo cadastrar_Acervo = new Cadastrar_Acervo(titulo, img, ano_publicacao, issn, isbn, editora);
+                string a = cadastrar_Acervo.cadastrar_Obra();
+
             }
+            
+            List<Cadastrar_Acervo> Obras = Cadastrar_Acervo.listagem();
+            
 
 
-           
-            return RedirectToAction();
+
+            return View(Cadastrar_Acervo.listagem());
         }
 
 

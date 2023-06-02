@@ -19,7 +19,7 @@ namespace Onbooks_3Ds.Models
             this.tipo = tipo;
         }
 
-        static MySqlConnection conexao = FabricaConexao.getConexao(true, "Casa");
+        static MySqlConnection conexao = FabricaConexao.getConexao(true, "Senai");
 
         public string Email { get => email; set => email = value; }
         public string Senha { get => senha; set => senha = value; }
