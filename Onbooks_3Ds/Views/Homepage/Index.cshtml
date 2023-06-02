@@ -1,0 +1,357 @@
+﻿
+
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="~/css/index.css">
+    <link rel="stylesheet" href="~/css/navbar.css">
+    <link rel="stylesheet" href="~/css/footer.css">
+    <link rel="stylesheet" href="~/css/jquery.modal.min.css" />
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="~/img/yett.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+
+
+
+    <title>OnBooks</title>
+</head>
+
+<body>
+    <partial name="_Toast" />
+    <div id="ex1" class="modal">
+        <img src="~/img/Bibliophile-rafiki (1).svg" />
+        <h3>
+            Se inscreva para receber notificações!</h2>
+            <form action="#">
+                <div class="input-field">
+                    <input type="email" placeholder="Your email address" />
+                    <button class="submit-btn" type="submit">subscribe</button>
+                </div>
+            </form>
+
+    </div>
+
+    <div id="ex2" class="modal">
+        <center>
+            <h1 class="titulo">Gêneros</h1>
+            <div class="menudois">
+                <div class="toggledois  ">
+                    <ion-icon name="add-outline"></ion-icon>
+                </div>
+
+                <!-- --i its a integer var for css -->
+                <li style="--i:0;">
+
+                    <a href="#" title="Terror"><ion-icon name="skull-outline"></ion-icon></a>
+
+
+                </li>
+
+                <li style="--i:1;">
+
+
+                    <a href="#" title="Educacional"><ion-icon name="library-outline"></ion-icon></a>
+
+                </li>
+
+                <li style="--i:2;">
+                    <a href="#" title="Poema"><ion-icon name="rose-outline"></ion-icon></a>
+
+                </li>
+                <li style="--i:3;">
+                    <a href="produtos.html" title="Aventura"><ion-icon name="shield-half-outline"></ion-icon></a>
+                </li>
+                <li style="--i:4;">
+                    <a href="#" title="Infantil"><ion-icon name="balloon-outline"></ion-icon></a>
+                </li>
+                <li style="--i:5;">
+                    <a href="#" title="HQ's"><ion-icon name="chatbox-ellipses-outline"></ion-icon></a>
+                </li>
+                <li style="--i:6;">
+                    <a href="#" title="Suspense"><ion-icon name="footsteps-outline"></ion-icon></a>
+                </li>
+                <li style="--i:7;">
+                    <a href="#" title="Romance"><ion-icon name="heart-outline"></ion-icon></a>
+
+                </li>
+
+            </div>
+
+    </div>
+    </center>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <a href="index.html">
+                    <span class="image">
+                        <img src="~/img/yett.png" alt="">
+                    </span>
+                </a>
+
+                <div class="text logo-text">
+                    <span class="name">OnBooks</span>
+                    <hr class="linha">
+
+
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-user icon'></i>
+                            <span class="text nav-text">@TempData["email"]</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="bibliotecas.html">
+                            <i class='bx bx-book icon'></i>
+                            <span class="text nav-text">Bibliotecas</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="delivery.html">
+
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Delivery</span>
+
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="loginADM.html">
+                            <i class='bx bx-key icon'></i>
+                            <span class="text nav-text">Administrador</span>
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-book-bookmark icon'></i>
+                            <span class="text nav-text">Aluguéis</span>
+
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#ex1" rel="modal:open">
+                            <i class='bx bx-news icon'></i>
+                            <span class="text nav-text">Novidades</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#ex2" rel="modal:open">
+                            <i class='bx bx-book-open icon'></i>
+                            <span class="text nav-text">Gêneros</span>
+
+                        </a>
+                    </li>
+
+                    </li class="nav-link">
+                    <a href="index.html"></a>
+                    <span class="text nav-text">
+                        <img class="sideimg" src="_img/9090.png" alt="">
+                    </span>
+                    </a>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="bottom-content">
+                @if (Context.Session.GetString("user") == null) {
+                
+                    <li class="">
+            
+            <a asp-controller="Homepage" asp-action="Login_Cadastro">
+                <i class='bx bx-log-in icon'></i>
+                <span class="text nav-text">Login</span>
+            </a>
+        </li>
+
+    } else {
+        <li class="nav-bottom">
+            <a asp-controller="Homepage" asp-action="Sair">
+                <i class='bx bx-log-out icon'></i>
+                <span class="text nav-text">Logout</span>
+            </a>
+        </li>
+    }
+
+
+
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-sun icon sun'></i>
+                        <i class='bx bx-moon icon moon'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+
+    <div class="home">
+        <div class="estrela">
+            <h1 class="highlight">DESTAQUES</h1>
+        </div>
+        <center>
+            <div class="page-content">
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">O Príncipe Cruel</h2>
+                        <p class="copy">O primeiro livro da saga: O Povo do Ar</p>
+                        <a href="produto.html">
+                            <button class="btn">Ver mais</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">O Rei Perverso</h2>
+                        <p class="copy">O segundo livro da saga: O Povo do Ar</p>
+                        <button class="btn">Ver Mais</button>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">Rainha do Nada</h2>
+                        <p class="copy">O terceiro livro da saga: O Povo do Ar</p>
+                        <button class="btn">Ver mais</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2 class="title">Rei de Elfhame</h2>
+                        <p class="copy">O livro bônus da saga: O Povo do Ar</p>
+                        <button class="btn">Ver mais</button>
+                    </div>
+                </div>
+
+
+                <div class="card-sec">
+                    <div class="content-sec">
+                        <h2 class="title-sec">É assim que acaba</h2>
+                        <p class="copy-sec">O primeiro livro da coleção</p>
+                        <button class="btn-sec">Ver mais</button>
+                    </div>
+                </div>
+                <div class="card-sec">
+                    <div class="content-sec">
+                        <h2 class="title-sec">É assim que começa</h2>
+                        <p class="copy-sec">O segundo livro da coleção</p>
+                        <button class="btn-sec">Ver Mais</button>
+
+                    </div>
+                </div>
+                <div class="card-sec" id="card3">
+                    <div class="content-sec">
+                        <h2 class="title-sec" id="verity"> Verity</h2>
+                        <p class="copy-sec">Livro de suspense e tensão</p>
+                        <button class="btn-sec">Ver mais</button>
+                    </div>
+                </div>
+                <div class="card-sec" id="card3">
+                    <div class="content-sec">
+                        <h2 class="title-sec">O lado feio do amor</h2>
+                        <p class="copy-sec">Livro de drama e romance</p>
+                        <button class="btn-sec">Ver mais</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="section">
+                <p class="marquee" id="text-styling">
+                    "O
+                    homem que não lê bons livros não tem nenhuma vantagem sobre o homem que não sabe ler."
+                </p>
+            </div>
+        </center>
+    </div>
+
+    <df-messenger intent="WELCOME"
+                  chat-icon="https://icons.iconarchive.com/icons/fa-team/fontawesome/128/FontAwesome-Info-icon.png"
+                  chat-title="OnBooks" agent-id="4f2db6c8-a361-4af3-9a28-2c540c10b629" language-code="pt-br"></df-messenger>
+
+    <footer>
+
+
+        <div class="footer-bottom">
+            <h3>OnBooks</h3>
+            <div class="footer-menu">
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa fa-map"></i></a></li>
+                    <li><a href="#"><i class="fa fa-phone"></i></a></li>
+                </ul>
+
+                <ul class="pages">
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<script src="~/js/index.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $(document).tooltip();
+    });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+</html>

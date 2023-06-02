@@ -1,0 +1,320 @@
+﻿@page
+@using Microsoft.AspNetCore.Http;
+@model Onbooks_3Ds.Views.Homepage.ProdutoModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="~/css/jquery.modal.min.css" />
+    <link rel="stylesheet" href="~/css/navbar.css">
+    <link rel="stylesheet" href="~/css/footer.css">
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="~/img/yett.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="~/css/produto.css">
+    <title>Príncipe Cruel</title>
+</head>
+<body>
+    <div id="ex1" class="modal">
+        <img src="~/img/Bibliophile-rafiki (1).svg" />
+        <h3>
+            Se inscreva para receber notificações!</h2>
+            <form action="#">
+                <div class="input-field">
+                    <input type="email" placeholder="Your email address" />
+                    <button class="submit-btn" type="submit">subscribe</button>
+                </div>
+            </form>
+
+    </div>
+
+    <div id="ex2" class="modal">
+        <center>
+            <h1 class="titulo">Gêneros</h1>
+            <div class="menudois">
+                <div class="toggledois  ">
+                    <ion-icon name="add-outline"></ion-icon>
+                </div>
+
+                <!-- --i its a integer var for css -->
+                <li style="--i:0;">
+
+                    <a href="#" title="Terror"><ion-icon name="skull-outline"></ion-icon></a>
+
+
+                </li>
+
+                <li style="--i:1;">
+
+
+                    <a href="#" title="Educacional"><ion-icon name="library-outline"></ion-icon></a>
+
+                </li>
+
+                <li style="--i:2;">
+                    <a href="#" title="Poema"><ion-icon name="rose-outline"></ion-icon></a>
+
+                </li>
+                <li style="--i:3;">
+                    <a href="produtos.html" title="Aventura"><ion-icon name="shield-half-outline"></ion-icon></a>
+                </li>
+                <li style="--i:4;">
+                    <a href="#" title="Infantil"><ion-icon name="balloon-outline"></ion-icon></a>
+                </li>
+                <li style="--i:5;">
+                    <a href="#" title="HQ's"><ion-icon name="chatbox-ellipses-outline"></ion-icon></a>
+                </li>
+                <li style="--i:6;">
+                    <a href="#" title="Suspense"><ion-icon name="footsteps-outline"></ion-icon></a>
+                </li>
+                <li style="--i:7;">
+                    <a href="#" title="Romance"><ion-icon name="heart-outline"></ion-icon></a>
+
+                </li>
+
+            </div>
+
+    </div>
+    </center>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <a href="index.html">
+                    <span class="image">
+                        <img src="_img/yett.png" alt="">
+                    </span>
+                </a>
+
+                <div class="text logo-text">
+                    <span class="name">OnBooks</span>
+                    <hr class="linha">
+
+
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="bibliotecas.html">
+                            <i class='bx bx-book icon'></i>
+                            <span class="text nav-text">Bibliotecas</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="delivery.html">
+
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Delivery</span>
+
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="loginADM.html">
+                            <i class='bx bx-key icon'></i>
+                            <span class="text nav-text">Administrador</span>
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-book-bookmark icon'></i>
+                            <span class="text nav-text">Aluguéis</span>
+
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#ex1" rel="modal:open">
+                            <i class='bx bx-news icon'></i>
+                            <span class="text nav-text">Novidades</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#ex2" rel="modal:open">
+                            <i class='bx bx-book-open icon'></i>
+                            <span class="text nav-text">Gêneros</span>
+
+                        </a>
+                    </li>
+
+                    </li class="nav-link">
+                    <a href="index.html"></a>
+                    <span class="text nav-text">
+                        <img class="sideimg" src="_img/9090.png" alt="">
+                    </span>
+                    </a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="login.html">
+                        <i class='bx bx-log-in icon'></i>
+                        <span class="text nav-text">Login</span>
+                    </a>
+                </li>
+
+                <li class="nav-bottom">
+                    <a href="#">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-sun icon sun'></i>
+                        <i class='bx bx-moon icon moon'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="fundo" id="gradient">
+                <div class="grid product">
+                    <div class="column-xs-12 column-md-7">
+                        <div class="product-gallery">
+                            <div class="product-image">
+                                <img class="active" src="https://cdn.record.com.br/wp-content/uploads/2019/07/26012910/15459-600x932.png">
+                            </div>
+                            <ul class="image-list">
+                                <li class="image-item"><img class="image" src="https://m.media-amazon.com/images/I/51Dyyot7j5L.jpg  "></li>
+                                <li class="image-item"><img src="https://cdn.record.com.br/wp-content/uploads/2019/07/26012910/15459-600x932.png"></li>
+                                <li class="image-item"><img src="https://m.media-amazon.com/images/I/81ROClgP02S.jpg"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column-xs-12 column-md-5">
+                        <h1 class="titulo">Príncipe Cruel </h1>
+
+                        <div class="description">
+                            <p>Envolvida em intrigas e traições do palácio, Jude descobre sua própria capacidade para truques e derramamento de sangue. Mas, com a ameaça de uma guerra civil e o Reino das Fadas por um fio, Jude precisará arriscar sua vida em uma perigosa aliança para salvar suas irmãs, e o próprio Reino.</p>
+
+                        </div>
+                        <button class="add-to-cart">Emprestar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="grid related-products">
+                <div class="column-xs-12">
+                    <h3>Você pode gostar:</h3>
+                </div>
+                <div class="column-xs-12 column-md-4">
+                    <a href="">
+                        <img src="https://m.media-amazon.com/images/I/91N9kjbqxWS.jpg">
+                        <h4>Rei Perverso</h4>
+
+                    </a>
+                </div>
+                <div class="column-xs-12 column-md-4">
+                    <a href="">
+                        <img src="https://m.media-amazon.com/images/I/91vZBs7i-+L.jpg">
+                        <h4>Rainha do Nada</h4>
+
+                    </a>
+                </div>
+                <div class="column-xs-12 column-md-4">
+                    <a href="">
+                        <img src="https://m.media-amazon.com/images/I/81ibfYk4qmL.jpg">
+                        <h4>Harry Potter e a pedra filosofal</h4>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <df-messenger intent="WELCOME"
+                  chat-icon="https://icons.iconarchive.com/icons/fa-team/fontawesome/128/FontAwesome-Info-icon.png"
+                  chat-title="OnBooks" agent-id="4f2db6c8-a361-4af3-9a28-2c540c10b629" language-code="pt-br"></df-messenger>
+
+    <footer>
+
+
+        <div class="footer-bottom">
+            <h3>OnBooks</h3>
+            <div class="footer-menu">
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa fa-map"></i></a></li>
+                    <li><a href="#"><i class="fa fa-phone"></i></a></li>
+                </ul>
+
+                <ul class="pages">
+                </ul>
+            </div>
+
+
+
+        </div>
+
+
+    </footer>
+
+</body>
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $(document).tooltip();
+    });
+</script>
+<script src="~/js/produto.js"></script>
+</html>

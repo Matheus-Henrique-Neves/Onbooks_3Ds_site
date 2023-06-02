@@ -1,0 +1,252 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="_css/jquery.modal.min.css" />
+    <!----===== Icons e jquery CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="_img/yett.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+    <link rel="stylesheet" href="~/css/admin.css">
+    <link rel="stylesheet" href="~/css/navbar.css">
+    <link rel="stylesheet" href="~/css/footer.css">
+
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <partial name="_Toast" />
+
+    </center>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <a button asp-controller="Adm" asp-action="Dashbord_Administracao">
+                    <span class="image">
+                        <img src="~/img/yett.png" alt="">
+                    </span>
+                </a>
+
+                <div class="text logo-text">
+                    <span class="name">OnBooks</span>
+                    <hr class="linha">
+
+
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a asp-controller="Adm" asp-action="Dashbord_Administracao">
+                            <i class='bx bx-grid-alt icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                          <a asp-controller="Adm" asp-action="Acervo_Biblioteca">
+                            <i class='bx bx-library icon'></i>
+                            <span class="text nav-text">Bibliotecas</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a asp-controller="Adm" asp-action="Cadastro_de_livros">
+
+                            <i class='bx bx-edit icon'></i>
+                            <span class="text nav-text">Cadastro de Livro</span>
+
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a asp-controller="Adm" asp-action="Reservas">
+                            <i class='bx bx-wallet-alt icon'></i>
+                            <span class="text nav-text">Reservas</span>
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-link">
+                        <a asp-controller="Adm" asp-action="Emprestimus">
+                            <i class='bx bx-transfer-alt icon'></i>
+                            <span class="text nav-text">Empréstimos</span>
+
+                        </a>
+                    </li>
+
+
+
+
+                    </li class="nav-link">
+                    <a href="index.html"></a>
+                    <span class="text nav-text">
+                        <img class="sideimg" src="~/img/9090.png" alt="">
+                    </span>
+                    </a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+            <div class="bottom-content">
+
+                @if (Context.Session.GetString("user") == null)
+                {
+
+                    <li class="">
+
+                        <a asp-controller="Adm" asp-action="Sings">
+                            <i class='bx bx-log-in icon'></i>
+                            <span class="text nav-text">Login</span>
+                        </a>
+                    </li>
+
+                }
+                else
+                {
+                    <li class="nav-bottom">
+                        <a asp-controller="Adm" asp-action="Sair">
+                            <i class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+                }
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-sun icon sun'></i>
+                        <i class='bx bx-moon icon moon'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+    <div>
+        <h1 class="dashboard">DASHBOARD</h1>
+    </div>
+    <main class="cards">
+
+        <div class="card">
+            <div class="icon">
+                <img src="~/img/carteira.png" alt="Contact us.">
+            </div>
+            <h3>Empréstimos</h3>
+            <span>Aqui você acompanha os empréstimos feitos e se estão atrasados ou não.</span>
+            <a button asp-controller="Adm" asp-action="Emprestimos"> <button asp-controller="Adm" asp-action="" class="go">Acessar</button></a>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <img src="~/img/boook.png" alt="Cadastro de Livros">
+            </div>
+            <h3>Cadastro de Livros</h3>
+            <span>Como o próprio nome diz, serve para cadastrar os livros que chegam.</span>
+            <a asp-controller="Adm" asp-action="Cadastro_de_livros"><button class="go">Acessar</button></a>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <img src="~/img/ler.png" alt="Shop here.">
+            </div>
+            <h3>Bibliotecas</h3>
+            <span>Consegue ver de qual biblioteca é um determinado livro</span>
+            <button class="go">Acessar</button>
+        </div>
+        <div class="card">
+            <div class="icon">
+                <img src="~/img/calendario.png" alt="About us.">
+            </div>
+            <h3>Reservas</h3>
+            <span>Serve para ver os livros reservados e suas datas.</span>
+            <a asp-controller="Adm" asp-action="Reservas"> <button class="go">Acessar</button></a>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <df-messenger intent="WELCOME"
+                  chat-icon="https://icons.iconarchive.com/icons/fa-team/fontawesome/128/FontAwesome-Info-icon.png"
+                  chat-title="OnBooks" agent-id="4f2db6c8-a361-4af3-9a28-2c540c10b629" language-code="pt-br"></df-messenger>
+
+    <footer>
+
+        <div class="tamanho">
+            <div class="footer-bottom">
+                <h3>OnBooks</h3>
+                <div class="footer-menu">
+                    <ul class="socials">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                        <li><a href="#"><i class="fa fa-map"></i></a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i></a></li>
+                    </ul>
+
+                    <ul class="pages">
+                    </ul>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $(document).tooltip();
+        });
+    </script>
+</body>
+<script src="~/js/admin.js"></script>
+</html>

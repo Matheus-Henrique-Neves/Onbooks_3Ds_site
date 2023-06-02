@@ -1,0 +1,497 @@
+﻿@page
+@using Microsoft.AspNetCore.Http;
+@model Onbooks_3Ds.Views.Homepage.GenerosModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="~/css/jquery.modal.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="~/css/produtos.css">
+    <link rel="shortcut icon" href="~/img/yett.png" type="image/x-icon">
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Aventura</title>
+</head>
+<body>
+
+    <div id="ex1" class="modal">
+        <img src="~/img/Bibliophile-rafiki (1).svg" />
+        <h3>
+            Se inscreva para receber notificações!</h2>
+            <form action="#">
+                <div class="input-field">
+                    <input type="email" placeholder="Your email address" />
+                    <button class="submit-btn" type="submit">subscribe</button>
+                </div>
+            </form>
+
+    </div>
+
+    <div id="ex2" class="modal">
+        <center>
+            <h1 class="titulo">Gêneros</h1>
+            <div class="menudois">
+                <div class="toggledois  ">
+                    <ion-icon name="add-outline"></ion-icon>
+                </div>
+
+                <!-- --i its a integer var for css -->
+                <li style="--i:0;">
+
+                    <a href="#" title="Terror"><ion-icon name="skull-outline"></ion-icon></a>
+
+
+                </li>
+
+                <li style="--i:1;">
+
+
+                    <a href="#" title="Educacional"><ion-icon name="library-outline"></ion-icon></a>
+
+                </li>
+
+                <li style="--i:2;">
+                    <a href="#" title="Poema"><ion-icon name="rose-outline"></ion-icon></a>
+
+                </li>
+                <li style="--i:3;">
+                    <a href="#" title="Aventura"><ion-icon name="shield-half-outline"></ion-icon></a>
+                </li>
+                <li style="--i:4;">
+                    <a href="#" title="Infantil"><ion-icon name="balloon-outline"></ion-icon></a>
+                </li>
+                <li style="--i:5;">
+                    <a href="#" title="HQ's"><ion-icon name="chatbox-ellipses-outline"></ion-icon></a>
+                </li>
+                <li style="--i:6;">
+                    <a href="#" title="Suspense"><ion-icon name="footsteps-outline"></ion-icon></a>
+                </li>
+                <li style="--i:7;">
+                    <a href="#" title="Romance"><ion-icon name="heart-outline"></ion-icon></a>
+
+                </li>
+
+            </div>
+
+    </div>
+    </center>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <a href="index.html">
+                    <span class="image">
+                        <img src="~/img/yett.png" alt="">
+                    </span>
+                </a>
+
+                <div class="text logo-text">
+                    <span class="name">OnBooks</span>
+                    <hr class="linha">
+
+
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="bibliotecas.html">
+                            <i class='bx bx-book icon'></i>
+                            <span class="text nav-text">Bibliotecas</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="delivery.html">
+
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Delivery</span>
+
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="loginADM.html">
+                            <i class='bx bx-key icon'></i>
+                            <span class="text nav-text">Administrador</span>
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-book-bookmark icon'></i>
+                            <span class="text nav-text">Aluguéis</span>
+
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#ex1" rel="modal:open">
+                            <i class='bx bx-news icon'></i>
+                            <span class="text nav-text">Novidades</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#ex2" rel="modal:open">
+                            <i class='bx bx-book-open icon'></i>
+                            <span class="text nav-text">Gêneros</span>
+
+                        </a>
+                    </li>
+
+                    </li class="nav-link">
+                    <a href="index.html"></a>
+                    <span class="text nav-text">
+                        <img class="sideimg" src="_img/9090.png" alt="">
+                    </span>
+                    </a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="login.html">
+                        <i class='bx bx-log-in icon'></i>
+                        <span class="text nav-text">Login</span>
+                    </a>
+                </li>
+
+                <li class="nav-bottom">
+                    <a href="#">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-sun icon sun'></i>
+                        <i class='bx bx-moon icon moon'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="container">
+
+
+
+        <div class="small-container">
+
+            <h1 class="aventura">AVENTURA</h1>
+
+
+            <div class="row">
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/81ibfYk4qmL.jpg" alt="" />
+                    <h4>Harry Potter e a pedra filosofal</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/51SnGLrrJcL._SX346_BO1,204,203,200_.jpg" alt="" />
+                    <h4>Harry Potter e a câmara secreta</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/41kT95iZ81L._SX346_BO1,204,203,200_.jpg" alt="" />
+                    <h4>Harry Potter e o prizioneiro de Askaban</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/51DDABrpU5L._SX346_BO1,204,203,200_.jpg" alt="" />
+                    <h4>Harry Potter e o cálice de fogo</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/51Dyyot7j5L.jpg" alt="" />
+                    <h4>Príncipe Cruel</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/91N9kjbqxWS.jpg" alt="" />
+                    <h4>Rei Perverso</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/51r3SbJ+qrL._SX335_BO1,204,203,200_.jpg" alt="" />
+                    <h4>Rainha do nada</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://books.google.com.br/books/publisher/content?id=KgopEAAAQBAJ&hl=pt-BR&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U1shcp9FBCzefrJcB_5lZTuJNzMiA&w=1280" alt="" />
+                    <h4>Contos de Elfhame</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/51PRKKi2BuL._SX325_BO1,204,203,200_.jpg" alt="" />
+                    <h4>Percy Jackson e o ladrão de raios</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/51yk3hGtAHL._SY344_BO1,204,203,200_.jpg" alt="" />
+                    <h4>Percy Jackson e o mar de monstros</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/51sZJKZpQBL._SX337_BO1,204,203,200_.jpg" alt="" />
+                    <h4>Percy Jackson e maldição do Titã </h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/51djfhAfT2L._SY344_BO1,204,203,200_.jpg" alt="" />
+                    <h4>Percy Jackson e a batalha do labirinto</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/518bGX0cx1L._SX324_BO1,204,203,200_.jpg" alt="" />
+                    <h4>Jogos Vorazes</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/51KotlEEEFL._SX329_BO1,204,203,200_.jpg" alt="" />
+                    <h4>Jogos Vorazes: em chamas</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://m.media-amazon.com/images/I/51vv5xWPf+L._SY346_.jpg" alt="" />
+                    <h4>Jogos Vorazes: a esperança</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+
+                </div>
+
+                <div class="col-4">
+                    <img src="https://doispontos.vteximg.com.br/arquivos/ids/180926-1000-1500/m.jpg?v=637959854591330000" alt="" />
+                    <h4>Jogos Vorazes: a cantiga</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="page-btn">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>&#8594;</span>
+            </div>
+        </div>
+
+
+
+        <df-messenger intent="WELCOME"
+                      chat-icon="https://icons.iconarchive.com/icons/fa-team/fontawesome/128/FontAwesome-Info-icon.png"
+                      chat-title="OnBooks" agent-id="4f2db6c8-a361-4af3-9a28-2c540c10b629" language-code="pt-br"></df-messenger>
+
+        <footer>
+
+
+            <div class="footer-bottom">
+                <h3>OnBooks</h3>
+                <div class="footer-menu">
+                    <ul class="socials">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                        <li><a href="#"><i class="fa fa-map"></i></a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i></a></li>
+                    </ul>
+
+                    <ul class="pages">
+                    </ul>
+                </div>
+            </div>
+        </footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<!-- Footer -->
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<!-- js for toggle menu -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $(document).tooltip();
+    });
+</script>
+<script src="~/js/produtos.js"></script>
+</html>

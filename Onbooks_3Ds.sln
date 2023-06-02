@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onbooks_3Ds", "Onbooks_3Ds\Onbooks_3Ds.csproj", "{A1AD03F2-0704-49B4-A925-0C40A52D57BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1AD03F2-0704-49B4-A925-0C40A52D57BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1AD03F2-0704-49B4-A925-0C40A52D57BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1AD03F2-0704-49B4-A925-0C40A52D57BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1AD03F2-0704-49B4-A925-0C40A52D57BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5C5DA10-7D9D-4EF7-9284-32538AAF681D}
+	EndGlobalSection
+EndGlobal

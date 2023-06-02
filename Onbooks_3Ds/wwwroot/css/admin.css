@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  
+
+}
+
+
+
+body {
+  background: #F6F9FF;
+  height: 100%;
+  width: 100%;
+ 
+  justify-content: center;
+  color: #434343;
+  font-size: 16px;
+}
+.dashboard{
+  text-align: center;
+ margin-bottom: 600px;
+ font-size: 60px;
+ font-family: 'Rampart one', cursive;
+ margin-top: 30px;
+ color: #000;
+
+
+}
+
+main.cards {
+  display: flex;
+  margin-left: 250px;
+  align-items: center;
+
+ 
+ 
+}
+
+main.cards div.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgb(154, 218, 149);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  max-height: 468px;
+  margin-left: 32px;
+  width: 350px;
+  height: 350px;
+  box-shadow: #434343 0 0 10px;
+ margin-top: -400px;
+}
+
+
+
+main.cards div.card:first-child {
+  margin-left: 0;
+}
+
+main.cards div.card .icon {
+  width: 94px;
+  height: 94px;
+}
+
+main.cards div.card img {
+  width: 100%;
+  height: 100%;
+}
+
+main.cards div.card h3 {
+  font-size: 100%;
+  margin: 16px 0;
+}
+
+main.cards div.card span {
+  font-weight: 300;
+  max-width: 240px;
+  font-size: 80%;
+  margin-bottom: 16px;
+}
+
+main.cards div.card button {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  border-radius: 32px;
+  border: 0;
+  cursor: pointer;
+  font-size: 80%;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 16px 0;
+  width: 200px;
+  margin-top: 60px;
+  height: 40px;
+  background-color: #3392f2;
+}
+main.cards div.card button:hover{
+  background-color: #64aef2;
+
+}
+
+main.cards div.card.contact button {
+  background-color: #3E8AFF;
+}
+main.cards div.card.shop button {
+  background: linear-gradient(to right, #3E8AFF, #64aef2);
+}
+main.cards div.card.about button {
+  background: linear-gradient(to right,#3E8AFF, #64aef2);
+}
+
+
+
+@media screen and (max-width: 720px) {
+  main.cards {
+      flex-direction: column;
+     width: 20px;
+     
+
+  }
+    body{
+      height: 2000px;
+      width: 300px;
+    }
+  .dashboard{
+    text-align: center;
+   margin-bottom: 60px;
+   font-size: 42px;
+   font-family: 'Rampart one', cursive;
+   margin-top: 30px;
+   color: #000;
+   margin-left: 95px;
+   
+  
+  
+  }
+  
+
+  main.cards div.card {
+      margin-left: 0;
+      margin-right: 50px;
+      margin-bottom: 32px;
+      width: 250px;
+      height: 350px;
+     margin-top: 0;
+      
+  }
+
+  main.cards div.card:last-child {
+      margin-bottom: 0;
+  }
+
+  main.cards div.card button {
+      font-size: 70%;
+  }
+
+}
+
+
+  
+
+
+

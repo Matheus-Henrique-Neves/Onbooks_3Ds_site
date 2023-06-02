@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Onbooks_3Ds.Models.User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--CSS-->
+    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+    <title>Login ADM</title>
+</head>
+<body>
+    <partial name="_Toast" />
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form asp-action="Sign" method="post" class="sign-in-form">
+                    <div class="img"><img src="~/img/yett.png" alt="" height="90px"></div>
+                    <h2 class="title">Entrar como Administrador</h2>
+                    <hr class="LINHA">
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input asp-for="Email" type="email" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input asp-for="Senha" type="password" placeholder="Email" />
+                    </div>
+                    <input type="submit" value="Login" class="btn solid" />
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+            </div>
+            <img src="~/img/Work time-amico.svg" class="image" />
+        </div>
+
+    </div>
+    </div>
+
+    <script src="~/js/login.js"></script>
+    <script src="https://kit.fontawesome.com/64d58efce2.js"
+            crossorigin="anonymous"></script>
+</body>
+</html>

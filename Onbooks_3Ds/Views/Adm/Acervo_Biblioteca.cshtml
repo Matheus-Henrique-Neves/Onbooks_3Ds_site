@@ -1,0 +1,224 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Onbooks_3Ds.Models.Acervo_biblio>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!----===== Icons e jquery CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="_img/yett.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+
+    <link rel="stylesheet" href="~/css/bibliotecaAdmin.css">
+    <link rel="stylesheet" href="~/css/navbar.css">
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Reservas</title>
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <a button asp-controller="Adm" asp-action="Dashbord_Administracao">
+                    <span class="image">
+                        <img src="~/img/yett.png" alt="">
+                    </span>
+                </a>
+
+                <div class="text logo-text">
+                    <span class="name">OnBooks</span>
+                    <hr class="linha">
+
+
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a asp-controller="Adm" asp-action="Dashbord_Administracao">
+                            <i class='bx bx-grid-alt icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="bibliotecaAdmin.html">
+                            <i class='bx bx-library icon'></i>
+                            <span class="text nav-text">Bibliotecas</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a asp-controller="Adm" asp-action="Cadastro_de_livros">
+
+                            <i class='bx bx-edit icon'></i>
+                            <span class="text nav-text">Cadastro de Livro</span>
+
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a asp-controller="Adm" asp-action="Reservas">
+                            <i class='bx bx-wallet-alt icon'></i>
+                            <span class="text nav-text">Reservas</span>
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-link">
+                        <a asp-controller="Adm" asp-action="Emprestimos">
+                            <i class='bx bx-transfer-alt icon'></i>
+                            <span class="text nav-text">Empréstimos</span>
+
+                        </a>
+                    </li>
+
+
+
+
+                    </li class="nav-link">
+                    <a href="index.html"></a>
+                    <span class="text nav-text">
+                        <img class="sideimg" src="~/img/9090.png" alt="">
+                    </span>
+                    </a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+            <div class="bottom-content">
+
+                @if (Context.Session.GetString("user") == null)
+                {
+
+                    <li class="">
+
+                        <a asp-controller="Adm" asp-action="Sings">
+                            <i class='bx bx-log-in icon'></i>
+                            <span class="text nav-text">Login</span>
+                        </a>
+                    </li>
+
+                }
+                else
+                {
+                    <li class="nav-bottom">
+                        <a asp-controller="Adm" asp-action="Sair">
+                            <i class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+                }
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-sun icon sun'></i>
+                        <i class='bx bx-moon icon moon'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+
+
+
+    <!-- address book home -->
+    <div class="addr-book" id="addr-book">
+        <div class="addr-book-content">
+            <div class="addr-book-head">
+                <i class="fa-solid fa-address-book fa-2x"></i>
+                <h2>OnBooks</h2>
+            </div>
+
+
+
+            <div class="addr-book-list" id="addr-book-list">
+                <table class="addr-table">
+                    <thead>
+                        <tr>
+                            <th>Imagem</th>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Biblioteca de Origem</th>
+                            
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            string formatoimg = "data:image/jpeg;base64," + item.Image;
+                            <tr>
+                                <td>
+                                    <img src="@formatoimg" width="200px" height="250px"></img>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelitem =>item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelitem =>item.Titulo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelitem =>item.Biblioteca)
+                                </td>
+
+                            </tr>
+                        }
+
+
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- end of address book home -->
+
+
+
+
+    <script src="~/js/nav.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+﻿@page
+@model Onbooks_3Ds.Views.Demonstrativos._ToastModel
+@if (TempData["msg"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        if (@TempData["msg"].ToString().IndexOf("sucesso") > 0) 
+            toastr.success('@TempData["msg"]')
+        else 
+            toastr.error('@TempData["msg"]')
+        
+    </script>
+}
+
