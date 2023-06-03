@@ -1,4 +1,4 @@
-﻿using CadUsu3dsN.Helper;
+﻿  using CadUsu3dsN.Helper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -23,7 +23,7 @@ namespace Onbooks_3Ds.Controllers
         }
         public IActionResult Cadastro_de_livros()
         {
-            return View();
+            return View(Cadastrar_Acervo.listagem());
         }
         public IActionResult Dashbord_Administracao()
         {
@@ -89,7 +89,7 @@ namespace Onbooks_3Ds.Controllers
                 arq.CopyTo(s);
                 byte[] bytesArquivo= s.ToArray();
                 string img = Convert.ToBase64String(bytesArquivo);
-                Cadastrar_Acervo cadastrar_Acervo = new Cadastrar_Acervo(titulo, img, ano_publicacao, issn, isbn, editora);
+                Cadastrar_Acervo cadastrar_Acervo = new Cadastrar_Acervo("0", titulo, img, ano_publicacao, issn, isbn, editora);
                 string a = cadastrar_Acervo.cadastrar_Obra();
 
             }

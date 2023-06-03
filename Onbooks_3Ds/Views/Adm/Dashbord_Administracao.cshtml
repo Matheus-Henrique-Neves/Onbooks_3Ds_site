@@ -79,7 +79,6 @@
 
                     <li class="nav-link">
                         <a asp-controller="Adm" asp-action="Cadastro_de_livros">
-
                             <i class='bx bx-edit icon'></i>
                             <span class="text nav-text">Cadastro de Livro</span>
 
@@ -170,7 +169,7 @@
             </div>
             <h3>Empréstimos</h3>
             <span>Aqui você acompanha os empréstimos feitos e se estão atrasados ou não.</span>
-            <a button asp-controller="Adm" asp-action="Emprestimos"> <button asp-controller="Adm" asp-action="" class="go">Acessar</button></a>
+            <a button asp-controller="Adm" asp-action="Emprestimus"> <button asp-controller="Adm" asp-action="" class="go">Acessar</button></a>
         </div>
 
         <div class="card">
@@ -188,7 +187,7 @@
             </div>
             <h3>Bibliotecas</h3>
             <span>Consegue ver de qual biblioteca é um determinado livro</span>
-            <button class="go">Acessar</button>
+            <a asp-controller="Adm" asp-action="Acervo_Biblioteca"><button class="go">Acessar</button></a>
         </div>
         <div class="card">
             <div class="icon">
@@ -196,7 +195,7 @@
             </div>
             <h3>Reservas</h3>
             <span>Serve para ver os livros reservados e suas datas.</span>
-            <a asp-controller="Adm" asp-action="Reservas"> <button class="go">Acessar</button></a>
+            <a asp-controller="Adm" asp-action="Reservas"><button class="go">Acessar</button></a>
         </div>
     </main>
 

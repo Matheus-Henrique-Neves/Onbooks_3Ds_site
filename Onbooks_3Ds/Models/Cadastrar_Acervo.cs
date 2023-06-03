@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Onbooks_3Ds.Models {
     public class Cadastrar_Acervo {
+        private string id;
         private string titulo;
         private string img;
         private string ano_publicacao;
@@ -17,7 +18,8 @@ namespace Onbooks_3Ds.Models {
         private string editora;
        // private string nome_editora;
 
-        public Cadastrar_Acervo(string titulo, string img, string ano_publicacao, string issn, string isbn,  string editora) {
+        public Cadastrar_Acervo(string id, string titulo, string img, string ano_publicacao, string issn, string isbn,  string editora) {
+            this.id = id;
             this.titulo = titulo;
             this.img = img;
             this.ano_publicacao = ano_publicacao;
@@ -26,6 +28,7 @@ namespace Onbooks_3Ds.Models {
             this.editora = editora;
         }
         static MySqlConnection conexao = FabricaConexao.getConexao(true, "Senai");
+        public string Id { get => id; set => id = value; }
         public string Titulo { get => titulo; set => titulo = value; }
         public string Img { get => img; set => img = value; }
         public string Ano_publicacao { get => ano_publicacao; set => ano_publicacao = value; }
@@ -94,7 +97,10 @@ namespace Onbooks_3Ds.Models {
 
 
 
-                    listatrasncrita.Add(new Cadastrar_Acervo(leitor.GetString("titulo"),
+                    listatrasncrita.Add(new Cadastrar_Acervo(
+                        
+                        leitor.GetString("id_obra"),
+                        leitor.GetString("titulo"),
                         leitor.GetString("img"),
                         leitor.GetString("ano_publicacao"),
                         leitor["issn"].ToString(),

@@ -1,6 +1,6 @@
-﻿@page
-@using Microsoft.AspNetCore.Http;
-@model Onbooks_3Ds.Views.Homepage.ProdutoModel
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
 @{
 }
 <!DOCTYPE html>
@@ -89,9 +89,9 @@
     <nav class="sidebar close">
         <header>
             <div class="image-text">
-                <a href="index.html">
+                <a asp-controller="Homepage" asp-action="index">
                     <span class="image">
-                        <img src="_img/yett.png" alt="">
+                        <img src="~/img/yett.png" alt="">
                     </span>
                 </a>
 
@@ -116,21 +116,21 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a asp-controller="Homepage" asp-action="index">
                             <i class='bx bx-home-alt icon'></i>
                             <span class="text nav-text">Home</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="bibliotecas.html">
+                        <a asp-controller="Homepage" asp-action="Biblioteca">
                             <i class='bx bx-book icon'></i>
                             <span class="text nav-text">Bibliotecas</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="delivery.html">
+                        <a asp-controller="Homepage" asp-action="Delivery">
 
                             <i class='bx bx-bell icon'></i>
                             <span class="text nav-text">Delivery</span>
@@ -139,7 +139,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="loginADM.html">
+                        <a asp-controller="Adm" asp-action="Signs">
                             <i class='bx bx-key icon'></i>
                             <span class="text nav-text">Administrador</span>
 
@@ -148,21 +148,21 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a asp-controller="Homepage" asp-action="index">
                             <i class='bx bx-book-bookmark icon'></i>
                             <span class="text nav-text">Aluguéis</span>
 
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#ex1" rel="modal:open">
+                        <a asp-controller="Homepage" asp-action="index" rel="modal:open">
                             <i class='bx bx-news icon'></i>
                             <span class="text nav-text">Novidades</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#ex2" rel="modal:open">
+                        <a asp-controller="Homepage" asp-action="Generos" rel="modal:open">
                             <i class='bx bx-book-open icon'></i>
                             <span class="text nav-text">Gêneros</span>
 
@@ -170,9 +170,9 @@
                     </li>
 
                     </li class="nav-link">
-                    <a href="index.html"></a>
+                    <a asp-controller="Homepage" asp-action="index"></a>
                     <span class="text nav-text">
-                        <img class="sideimg" src="_img/9090.png" alt="">
+                        <img class="sideimg" src="~/img/9090.png" alt="">
                     </span>
                     </a>
                     </li>
@@ -182,19 +182,28 @@
             </div>
 
             <div class="bottom-content">
-                <li class="">
-                    <a href="login.html">
-                        <i class='bx bx-log-in icon'></i>
-                        <span class="text nav-text">Login</span>
-                    </a>
-                </li>
 
-                <li class="nav-bottom">
-                    <a href="#">
-                        <i class='bx bx-log-out icon'></i>
-                        <span class="text nav-text">Logout</span>
-                    </a>
-                </li>
+                @if (Context.Session.GetString("user") == null)
+                {
+
+                    <li class="">
+
+                        <a asp-controller="Homepage" asp-action="Login_Cadastro">
+                            <i class='bx bx-log-in icon'></i>
+                            <span class="text nav-text">Login</span>
+                        </a>
+                    </li>
+
+                }
+                else
+                {
+                    <li class="nav-bottom">
+                        <a asp-controller="Adm" asp-action="Sair">
+                            <i class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+                }
 
                 <li class="mode">
                     <div class="sun-moon">

@@ -66,7 +66,7 @@
     </li>
 
     <li class="nav-link">
-        <a href="bibliotecaAdmin.html">
+        <a asp-controller="Adm" asp-action="Acervo_Biblioteca">
             <i class='bx bx-library icon'></i>
             <span class="text nav-text">Bibliotecas</span>
         </a>
@@ -74,7 +74,6 @@
 
     <li class="nav-link">
         <a asp-controller="Adm" asp-action="Cadastro_de_livros">
-
             <i class='bx bx-edit icon'></i>
             <span class="text nav-text">Cadastro de Livro</span>
 
@@ -91,7 +90,7 @@
     </li>
 
     <li class="nav-link">
-        <a asp-controller="Adm" asp-action="Emprestimos">
+        <a asp-controller="Adm" asp-action="Emprestimus">
             <i class='bx bx-transfer-alt icon'></i>
             <span class="text nav-text">Empréstimos</span>
 
@@ -225,13 +224,14 @@
             <table class="addr-table">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Imagem</th>
                         <th>Título</th>
+                        <th>Data Lançamento</th>
                         <th>ISBN</th>
                         <th>ISSN</th>
                         <th>Editora</th>
-                        <th></th>
-                        <th></th>
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -241,11 +241,17 @@
                         {
                             string formatoimg = "data:image/jpeg;base64," + livro.Img;
                             <tr>
-                                <td>
-                                    <img src="@formatoimg" width="200px" height="250px"></img>
+                                <td width="50px">
+                                   @Html.DisplayFor(modelitem => livro.Id)
                                 </td>
                                 <td>
+                                    <img src="@formatoimg" width="150px" height="200px"></img>
+                                </td>
+                                <td width="250px">
                                     @Html.DisplayFor(modelitem => livro.Titulo)
+                                </td>
+                                <td width="200px">
+                                   @Html.DisplayFor(modelitem => livro.Ano_publicacao)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelitem => livro.Isbn)
@@ -256,10 +262,7 @@
                                 <td>
                                     @Html.DisplayFor(modelitem => livro.Editora)
                                 </td>
-                                <td>
-                                </td>
-                                <td>
-                                </td>
+                                
                             </tr>
                         }
                     }
