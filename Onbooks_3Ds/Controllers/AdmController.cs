@@ -94,11 +94,6 @@ namespace Onbooks_3Ds.Controllers
 
             }
             
-            List<Cadastrar_Acervo> Obras = Cadastrar_Acervo.listagem();
-            
-
-
-
             return View(Cadastrar_Acervo.listagem());
         }
 

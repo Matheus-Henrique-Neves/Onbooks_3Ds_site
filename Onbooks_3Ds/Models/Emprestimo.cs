@@ -51,22 +51,12 @@ namespace Onbooks_3Ds.Models
 
                 while (leitor.Read())
                 {
-                    
-                    
-
-
-
                     lista.Add(new Emprestimo(
                 leitor["id_emprestimo"].ToString(),
                 leitor["titulo"].ToString(),
                 leitor["nome_usuario"].ToString(),
                 leitor.GetDateTime("data_emprestimo"),
                 leitor.GetDateTime("data_previsai_volta")));
-
-
-
-
-
                 }
 
                 conexao.Close();
