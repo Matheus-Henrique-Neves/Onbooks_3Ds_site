@@ -56,9 +56,9 @@ namespace Onbooks_3Ds.Models
                         int.Parse(leitor["id_reserva"].ToString()), 
                         leitor["titulo"].ToString(),
                         leitor["nome_usuario"].ToString(),
-
-                        data_finalizacao.Date,
-                        data.Date
+                        data.Date,
+                        data_finalizacao.Date
+                        
 
 
                         ));
@@ -73,5 +73,14 @@ namespace Onbooks_3Ds.Models
                 return null;
             }
         }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
 }

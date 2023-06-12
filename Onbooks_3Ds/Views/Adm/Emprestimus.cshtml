@@ -178,7 +178,7 @@
                             <th>Identidade</th>
                             <th>Data do Empréstimo</th>
                             <th>Data de Devolução</th>
-                            <th>Atrasado?</th>
+                            <th>devolução</th>
 
                         </tr>
                     </thead>
@@ -203,7 +203,9 @@
                                 <td>
                                     @Html.DisplayFor(modelitem =>item.Data_devolucao)
                                 </td>
-
+                                <td>
+                                    @Html.ActionLink("","",new {})
+                                </td>
 
 
                             </tr>

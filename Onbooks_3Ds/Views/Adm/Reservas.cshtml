@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-
+    <link rel="stylesheet" href="~/css/cadastLivros.css">
     <link rel="stylesheet" href="~/css/reserva.css">
     <link rel="stylesheet" href="~/css/navbar.css">
     <!-- font awesome icons -->
@@ -157,7 +157,41 @@
 
     </nav>
 
-
+    <div id="fullscreen-div"></div>
+    <form asp-action="Reservas" asp-controller="Adm" method="post" class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-head">
+                <h3 id="modal-title">Cadastrar</h3>
+                <button type="button" id="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-main">
+                <div class="modal-row grid-row">
+                    <div class="modal-col">
+                        <label for="">Data que Foi adiquirido</label>
+                        <input name="data_reserva" type="number" placeholder="yyyy/mm/dd" class="form-control">
+                    </div>
+                    <div class="modal-col">
+                        <label for="">Data que finaliza a reserva</label>
+                        <input name="data_final" type="number" placeholder="yyyy/mm/dd" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-col">
+                    <label for="">Codigo Da Usuario</label>
+                    <input name="id_Usuario" type="number" placeholder="Ex :509-SENAI Prof. Dr. Euryclides de Jesus Zerbini" class="form-control">
+                </div>
+                <div class="modal-col">
+                    <label for="">Codigo Da Obra </label>
+                        <input name="id_obra" type="number" placeholder="Ex :2 -livro x" class="form-control">
+                </div>
+            </div>
+            <div class="modal-col">
+                <button type="submit" id="save-btn">Cadastrar</button>
+            </div>
+        </div>
+        </div>
+    </form>
 
     <!-- address book home -->
     <div class="addr-book" id="addr-book">
@@ -167,7 +201,11 @@
                 <h2>OnBooks</h2>
             </div>
 
-
+            <div class="addr-book-top">
+                <button type="button" class="btn" id="add-btn">
+                    <span><i class="fas fa-plus"></i> Cadastrar Reserva</span>
+                </button>
+            </div>
 
             <div class="addr-book-list" id="addr-book-list">
                 <table class="addr-table">
@@ -212,7 +250,7 @@
 
 
 
-
+    <script src="~/js/cadastLivros.js"></script>
     <script src="~/js/nav.js"></script>
 
 </body>

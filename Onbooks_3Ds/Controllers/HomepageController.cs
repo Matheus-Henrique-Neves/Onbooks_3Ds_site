@@ -102,7 +102,7 @@ namespace Onbooks_3Ds.Controllers
         {
             User u = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("user"));
             HttpContext.Session.Remove("user");
-            return RedirectToAction("Index", "Homepage");
+             return RedirectToAction("Index", "Homepage");
         }
     
 

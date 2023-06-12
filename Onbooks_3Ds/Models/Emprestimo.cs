@@ -43,7 +43,7 @@ namespace Onbooks_3Ds.Models
                     "Select *from emprestimo " +
                     "INNER JOIN exemplar ON emprestimo.FK_EXEMPLAR_id_exemplar = exemplar.id_exemplar " +
                     "INNER JOIN usuario ON emprestimo.FK_USUARIO_id_usuario = usuario.id_usuario " +
-                    "INNER JOIN obra ON exemplar.FK_OBRA_id_obra = obra.id_obra;", conexao);
+                    "INNER JOIN obra ON exemplar.FK_OBRA_id_obra = obra.id_obra where data_devolucao < CURRENT_DATE() ", conexao);
 
                 List<Emprestimo> lista = new List<Emprestimo>();
 
@@ -73,7 +73,7 @@ namespace Onbooks_3Ds.Models
 
         }
 
-
+      
 
 
 

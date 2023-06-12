@@ -93,8 +93,28 @@ namespace Onbooks_3Ds.Controllers
                 string a = cadastrar_Acervo.cadastrar_Obra();
 
             }
-            
+
             return View(Cadastrar_Acervo.listagem());
+        }
+
+        [HttpPost]
+        public IActionResult Acervo_Biblioteca(string data_aqui,string id_obra,string id_biblioteca)
+        {
+            Acervo_cadastro a = new Acervo_cadastro(id_obra,id_biblioteca,data_aqui);
+
+
+            TempData["msg"] = a.Cadastrar_Acervo();
+            return View(Acervo_biblio.listagem());
+        }
+
+        [HttpPost]
+        public IActionResult Reservas(string data_reserva,string data_final, string id_obra, string id_Usuario)
+        {
+            Reservas_cadastro a = new Reservas_cadastro(data_reserva,data_final,id_obra, id_Usuario);
+
+
+            TempData["msg"] = a.Cadastrar_Reserva();
+            return View(Reserva.listar());
         }
 
 
