@@ -246,7 +246,7 @@
                             <p>Envolvida em intrigas e traições do palácio, Jude descobre sua própria capacidade para truques e derramamento de sangue. Mas, com a ameaça de uma guerra civil e o Reino das Fadas por um fio, Jude precisará arriscar sua vida em uma perigosa aliança para salvar suas irmãs, e o próprio Reino.</p>
 
                         </div>
-                        <button class="add-to-cart">Emprestar</button>
+                        <a asp-action="Reserva_ex" asp-controller="Homepage"><button class="add-to-cart">Reservar</button></a>
                     </div>
                 </div>
             </div>
@@ -325,5 +325,17 @@
         $(document).tooltip();
     });
 </script>
+@if (TempData["msg"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        if (@TempData["msg"].ToString().IndexOf("sucesso") > 0)
+            toastr.success('@TempData["msg"]')
+        else
+            toastr.error('@TempData["msg"]')
+
+    </script>
+}
 <script src="~/js/produto.js"></script>
 </html>

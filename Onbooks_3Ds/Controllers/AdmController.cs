@@ -117,6 +117,21 @@ namespace Onbooks_3Ds.Controllers
             return View(Reserva.listar());
         }
 
+          
+        public IActionResult Devolucao(int id)
+        {
+            Emprestimo e = new Emprestimo(id.ToString(), "", "", DateTime.Now.ToString(), DateTime.Now.ToString());
+            TempData["msg"] = e.Devolucao();
+            return RedirectToAction("Emprestimus");
+        }
+        [HttpPost]
+        public IActionResult Emprestimus(string id,string titulo,string data_emprestimo,string data_devolucao,string identidade)
+        {
+            Emprestimo e = new Emprestimo(id, titulo, identidade, data_emprestimo, data_devolucao);
+            TempData["msg"] = e.Cadastro_Emprestimo();
+            return RedirectToAction("Emprestimus");
+
+        }
 
 
     }

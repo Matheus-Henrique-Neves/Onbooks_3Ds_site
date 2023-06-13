@@ -41,11 +41,11 @@ namespace Onbooks_3Ds.Models
 
                     qyr.ExecuteNonQuery();
                     conexao.Close();
-                    return "Foi_cadastrado";
+                    return "Reservado";
                 }
                 else
                 {
-                    return "Não foi cadastrado preencha todos os campos";
+                    return "Não Foi Reservado";
                 }
             }
             catch (Exception e)

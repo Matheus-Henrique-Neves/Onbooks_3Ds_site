@@ -105,7 +105,12 @@ namespace Onbooks_3Ds.Controllers
              return RedirectToAction("Index", "Homepage");
         }
     
-
+        public IActionResult Reserva_ex()
+        {
+            Reservas_cadastro a = new Reservas_cadastro("20230613", "20230620", "10", "31");
+            TempData["msg"] = a.Cadastrar_Reserva();
+            return RedirectToAction("Index");
+        }
 
       
     }

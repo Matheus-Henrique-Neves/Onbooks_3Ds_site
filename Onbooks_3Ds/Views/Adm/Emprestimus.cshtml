@@ -21,10 +21,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-
+    <link rel="stylesheet" href="~/css/cadastLivros.css">
     <link rel="stylesheet" href="~/css/reserva.css">
     <link rel="stylesheet" href="~/css/navbar.css">
     <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
           integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,6 +33,49 @@
 </head>
 
 <body>
+
+    <div id="fullscreen-div"></div>
+    <form asp-action="Emprestimus" asp-controller="Adm" method="post" enctype="multipart/form-data" class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-head">
+                <h3 id="modal-title">Cadastrar</h3>
+                <button type="button" id="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-main">
+                <div class="modal-row">
+                    <div class="modal-col">
+                        <label for="">Id Usuario</label>
+                        <input name="id" type="text" placeholder="Codigo do Usuario" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-row grid-row">
+                    <div class="modal-col">
+                        <label for="">Data do emprestimo</label>
+                        <input name="data_emprestimo" type="number" placeholder="yyyy/mm/dd" class="form-control">
+                    </div>
+                    <div class="modal-col">
+                        <label for="">Data da possivel Devolução </label>
+                        <input name="data_devolucao" type="number" placeholder="yyyy/mm/dd" class="form-control">
+                    </div>
+                    
+                </div>
+
+                <div class="modal-row grid-row">
+                    <div class="modal-col">
+                        <label for="">Codigo do exemplar</label>
+                        <input name="titulo" type="number" placeholder="Ex :(1)-Marvel" class="form-control">
+                    </div>
+                    
+                </div>
+                <div class="modal-row">
+                    <button type="submit" id="save-btn">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    
     <nav class="sidebar close">
         <header>
             <div class="image-text">
@@ -166,6 +210,11 @@
                 <i class="fa-solid fa-address-book fa-2x"></i>
                 <h2>OnBooks</h2>
             </div>
+            <div class="addr-book-top">
+                <button type="button" class="btn" id="add-btn">
+                    <span><i class="fas fa-plus"></i> Cadastrar Acervo</span>
+                </button>
+            </div>
 
 
 
@@ -177,7 +226,7 @@
                             <th>Título</th>
                             <th>Identidade</th>
                             <th>Data do Empréstimo</th>
-                            <th>Data de Devolução</th>
+                            <th>Data de possivel devolução</th>
                             <th>devolução</th>
 
                         </tr>
@@ -204,7 +253,8 @@
                                     @Html.DisplayFor(modelitem =>item.Data_devolucao)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("","",new {})
+
+                                    @Html.ActionLink("devolver","Devolucao",new {id=item.Id})
                                 </td>
 
 
@@ -220,11 +270,20 @@
         </div>
     </div>
     <!-- end of address book home -->
+    @if (TempData["msg"] != null)
+    {
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script>
+            if (@TempData["msg"].ToString().IndexOf("sucesso") > 0)
+                toastr.success('@TempData["msg"]')
+            else
+                toastr.error('@TempData["msg"]')
 
-
-
-
+        </script>
+    }
     <script src="~/js/nav.js"></script>
+    <script src="~/js/cadastLivros.js"></script>
 
 </body>
 
